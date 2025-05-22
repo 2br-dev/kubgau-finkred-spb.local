@@ -357,16 +357,6 @@ section#info .info-card#card1 {
     opacity: 0;
 }
 
-@media (max-width: 600px) {
-    section#info .info-card#card1 {
-        aspect-ratio: unset;
-        padding-right: clamp(20px, 3vw, 30px);
-        padding-top: 110vw;
-        background-position: top right;
-        background-image: url("../../img/info1.jpg"), linear-gradient(to right, #20A6EF, #1AA0E7, #179CE3, #1499DE, #1295D8, #1497DB, #1090D1, #0F83BE, #107EB8);
-    }
-}
-
 section#info .info-card#card1 .card-content {
     display: flex;
     height: 100%;
@@ -375,13 +365,29 @@ section#info .info-card#card1 .card-content {
 }
 
 section#info .info-card#card1 .card-content .title h2 {
-    font-size: clamp(32px, 2.5vw, 48px);
+    font-size: clamp(24px, 2.5vw, 48px);
     color: #fff;
 }
 
 section#info .info-card#card1 .card-content .description .chip {
     border: 1px solid #fff;
     margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+    section#info .info-card#card1 {
+        padding-right: 0;
+        aspect-ratio: unset;
+        padding-bottom: 200px;
+        background-size: auto 60%;
+        background-image: url("../../img/info1.png"), linear-gradient(to right, #a632f7, #C069FF);
+        background-position: bottom right;
+        background-repeat: no-repeat, repeat;
+    }
+
+    section#info .info-card#card1 .card-content .title h2 {
+        margin-bottom: 0;
+    }
 }
 
 section#info .info-card#card2, section#info .info-card#mobile-card2 {
@@ -402,7 +408,7 @@ section#info .info-card#card2, section#info .info-card#mobile-card2 {
 }
 
 section#info .info-card#card2 h3, section#info .info-card#mobile-card2 h3 {
-    font-size: clamp(28px, 2.5vw, 32px);
+    font-size: clamp(24px, 2.5vw, 32px);
 }
 
 section#info .info-card#card2 a, section#info .info-card#mobile-card2 a {
@@ -411,20 +417,27 @@ section#info .info-card#card2 a, section#info .info-card#mobile-card2 a {
 
 section#info .info-card#card3 {
     width: 100%;
-    aspect-ratio: 4/2.5;
+    background-color: #3894FE;
     background-image: url("../../img/info3.jpg");
-    background-size: cover;
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
     color: #fff;
     transform-origin: top right;
     transform: translatey(3vw);
     transition: transform 0.6s, opacity 0.6s;
     opacity: 0;
+    padding-bottom: 50%;
+}
+
+@media (max-width: 900px) {
+    section#info .info-card#card3 {
+        padding-bottom: 60%;
+    }
 }
 
 section#info .info-card#card3 h3 {
-    font-size: clamp(28px, 2.5vw, 32px);
-    width: 60%;
-    min-width: 220px;
+    font-size: clamp(24px, 2.5vw, 32px);
 }
 
 section#info .info-card#card1 {
@@ -722,6 +735,374 @@ section#about details .details-content {
 }
 
 section#about.in-sight .col .num ~ p {
+    opacity: 1;
+    transform: none;
+}
+
+section#countdown {
+    background-color: #fff;
+}
+
+section#countdown .countdown-card {
+    background-color: #fff;
+    border-radius: clamp(15px, 3vw, 30px);
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s, opacity 0.4s;
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+section#countdown .countdown-card .info-wrapper {
+    width: 55%;
+    padding: clamp(20px, 3vw, 30px);
+}
+
+@media (max-width: 1000px) {
+    section#countdown .countdown-card .info-wrapper {
+        width: 100%;
+    }
+}
+
+section#countdown .countdown-card .info-wrapper h2 {
+    margin-top: 0;
+}
+
+section#countdown .countdown-card .info-wrapper .points {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 850px) {
+    section#countdown .countdown-card .info-wrapper .points {
+        flex-direction: row;
+    }
+}
+
+section#countdown .countdown-card .info-wrapper .points .point {
+    display: flex;
+    flex-direction: column;
+}
+
+section#countdown .countdown-card .info-wrapper .points .point .big {
+    display: block;
+}
+
+section#countdown .countdown-card .info-wrapper .points .point .big ~ span {
+    color: #888;
+}
+
+@media (min-width: 850px) {
+    section#countdown .countdown-card .info-wrapper .points .point .big {
+        margin-top: 20px;
+    }
+}
+
+section#countdown .countdown-card .info-wrapper .points .point img {
+    background-color: #9DD800;
+    border-radius: 10px;
+    width: clamp(36px, 3vw, 55px);
+}
+
+section#countdown .countdown-card .info-wrapper .points .point p:first-of-type {
+    margin-top: 10px;
+}
+
+section#countdown .countdown-card .info-wrapper .points .point:first-of-type p {
+    margin-top: 6px;
+}
+
+@media (max-width: 850px) {
+    section#countdown .countdown-card .info-wrapper .points .point {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    section#countdown .countdown-card .info-wrapper .points .point {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (min-width: 850px) {
+    section#countdown .countdown-card .info-wrapper .points .point:first-of-type {
+        width: 45%;
+        flex-shrink: 0;
+    }
+
+    section#countdown .countdown-card .info-wrapper .points .point:last-of-type {
+        width: 55%;
+    }
+}
+
+section#countdown .countdown-card .members-wrapper {
+    background-image: url("../../img/members-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    padding: clamp(20px, 3vw, 30px);
+    width: 45%;
+    border-top-right-radius: clamp(15px, 3vw, 30px);
+    border-bottom-right-radius: clamp(15px, 3vw, 30px);
+}
+
+@media (max-width: 1000px) {
+    section#countdown .countdown-card .members-wrapper {
+        width: 100%;
+        border-radius: 0;
+        aspect-ratio: 2/1;
+        min-height: 300px;
+    }
+}
+
+section#countdown .countdown-card .members-wrapper .members {
+    display: flex;
+}
+
+section#countdown .countdown-card .members-wrapper .members:hover .member {
+    opacity: 0.4;
+}
+
+section#countdown .countdown-card .members-wrapper .members.animated .member:nth-child(0) {
+    animation-delay: 0s;
+}
+
+section#countdown .countdown-card .members-wrapper .members.animated .member:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+section#countdown .countdown-card .members-wrapper .members.animated .member:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+section#countdown .countdown-card .members-wrapper .members.animated .member:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+section#countdown .countdown-card .members-wrapper .members.animated .member:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+section#countdown .countdown-card .members-wrapper .members.animated .member:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+section#countdown .countdown-card .members-wrapper .members.animated .member:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+section#countdown .countdown-card .members-wrapper .members.animated .member:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+section#countdown .countdown-card .members-wrapper .members.animated .member:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+section#countdown .countdown-card .members-wrapper .members.animated .member:nth-child(9) {
+    animation-delay: 0.9s;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member {
+    position: relative;
+    width: 70px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin-right: -20px;
+    transition: opacity 0.2s, box-shadow 0.2s;
+    max-width: 14vw;
+    background-size: cover;
+    background-position: center;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member big, section#countdown .countdown-card .members-wrapper .members .member small {
+    display: block;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member .big {
+    font-size: clamp(18px, 3.5vw, 24px);
+    white-space: nowrap;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member .tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 0%;
+    background-color: #fff;
+    min-width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none;
+    opacity: 0;
+    max-width: calc(100vw - 80px);
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(n+3) .tooltip {
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(n+3):hover .tooltip {
+    transform: translate(-50%, -20px);
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(n+7) .tooltip {
+    left: unset;
+    right: 0;
+    transform: translate(0, 0);
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(n+7):hover .tooltip {
+    transform: translate(0, -20px);
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:hover {
+    z-index: 10 !important;
+    opacity: 1;
+    box-shadow: 0 0 0 4px #0E5A67;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:hover .tooltip {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+section#countdown .countdown-card .members-wrapper .members .member.active {
+    z-index: 10 !important;
+    opacity: 1;
+    box-shadow: 0 0 0 4px #0E5A67;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(1) {
+    z-index: 10;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(2) {
+    z-index: 9;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(3) {
+    z-index: 8;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(4) {
+    z-index: 7;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(5) {
+    z-index: 6;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(6) {
+    z-index: 5;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(7) {
+    z-index: 4;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(8) {
+    z-index: 3;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(9) {
+    z-index: 2;
+}
+
+section#countdown .countdown-card .members-wrapper .members .member:nth-child(10) {
+    z-index: 1;
+}
+
+section#countdown .countdown-card .countdown-wrapper {
+    width: 100%;
+    background-color: #0E5A67;
+    color: #fff;
+    border-bottom-left-radius: clamp(15px, 3vw, 30px);
+    border-bottom-right-radius: clamp(15px, 3vw, 30px);
+    padding: clamp(10px, 3vw, 30px);
+    box-sizing: border-box;
+    display: flex;
+    gap: clamp(5px, 3vw, 30px);
+}
+
+@media (max-width: 1500px) {
+    section#countdown .countdown-card .countdown-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+section#countdown .countdown-card .countdown-wrapper .countdown-container {
+    display: flex;
+    align-items: center;
+    padding: 10px clamp(1px, 2vw, 40px);
+}
+
+@media (max-width: 600px) {
+    section#countdown .countdown-card .countdown-wrapper .countdown-container {
+        padding: 0;
+    }
+}
+
+section#countdown .countdown-card .countdown-wrapper .countdown-container [id], section#countdown .countdown-card .countdown-wrapper .countdown-container span {
+    color: #9DD800;
+    font-size: clamp(32px, 6vw, 72px);
+    width: 1.5em;
+    text-align: center;
+    line-height: 1em;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@media (max-width: 850px) {
+    section#countdown .countdown-card .countdown-wrapper .countdown-container [id], section#countdown .countdown-card .countdown-wrapper .countdown-container span {
+        flex-direction: column;
+    }
+}
+
+section#countdown .countdown-card .countdown-wrapper .countdown-container [id] .prefix, section#countdown .countdown-card .countdown-wrapper .countdown-container span .prefix {
+    font-size: clamp(12px, 1.5vw, 14px);
+    line-height: 1em;
+}
+
+section#countdown .countdown-card .countdown-wrapper .countdown-container span {
+    width: unset;
+}
+
+section#countdown .countdown-card .countdown-wrapper .action {
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 850px) {
+    section#countdown .countdown-card .countdown-wrapper .action {
+        text-align: center;
+    }
+}
+
+section#countdown .countdown-card .countdown-wrapper .action p:first-of-type {
+    margin-top: 0;
+}
+
+section#countdown .countdown-card .countdown-wrapper .action .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(5px, 2vw, 20px);
+}
+
+@media (max-width: 1500px) {
+    section#countdown .countdown-card .countdown-wrapper .action .buttons {
+        justify-content: center !important;
+        text-align: center;
+    }
+}
+
+section#countdown.in-sight .countdown-card {
     opacity: 1;
     transform: none;
 }
