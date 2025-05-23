@@ -78,7 +78,17 @@ let isScrollingRight:boolean;
 	document.querySelector('.spec-next')?.addEventListener('mouseup', stopScroll);
 
 	document.querySelectorAll('#ymap').length && initMap();
-	document.querySelectorAll('#countdown').length && initCounter();
+	document.querySelectorAll('#ds .num').length && initCounter();
+
+	document.querySelectorAll('.doc-preview').forEach(el => {
+		el.addEventListener('click', openDoc);
+	})
+
+	document.querySelector('.doc-close')?.addEventListener('click', e => {
+		e.preventDefault();
+		let modal = (e.target as HTMLElement).parentElement?.parentElement?.parentElement;
+		modal?.classList.remove('open');
+	})
 
 	document.querySelectorAll('.modal-trigger').forEach(el => el.addEventListener('click', openModal));
 	document.querySelectorAll('.closer').forEach(el => el.addEventListener('click', closeModal));
@@ -89,6 +99,15 @@ let isScrollingRight:boolean;
 	renderTracks();
 
 })();
+
+function openDoc(e:MouseEvent){
+	e.preventDefault();
+	const docModal = document.querySelector('.doc-modal-wrapper');
+	const frame = docModal?.querySelector('iframe');
+
+	docModal?.classList.add('open');
+
+}
 
 function intersector(entries:IntersectionObserverEntry[], observer:IntersectionObserver){
 	entries.forEach(entry => {
